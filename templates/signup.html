@@ -1,0 +1,32 @@
+{% extends 'layout_login.html' %}
+
+{% block body1 %}
+
+<div class="row justify-content-center mb-3">
+    <div class="col-md-6 text-center">
+            <h1 class="mb-5">Halo, Kamu! Yuk Regis!</h1>
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="email_user" class="form-control" aria-describedby="emailHelp"
+                    placeholder="xyz@mail.com">
+                <small id="emailHelp" class="form-text text-muted">We'll share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="nickname_user">Nick Name</label>
+                <input type="text" name="nick_user" class="form-control" placeholder="Ahmad">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="pass_user" class="form-control" id="exampleInputPassword1" placeholder="*******">
+            </div>
+        
+                <button type="submit" class="btn btn-primary text-right pr-4 pl-4">Sign Up</button>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock body1 %}

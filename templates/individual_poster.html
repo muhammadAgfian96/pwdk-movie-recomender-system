@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block body1 %}
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="row justify-content-center">
+    <div class="col-md-2 text-center">
+        <div class="card mt-3" style="width: 12rem; display: inline-block; border: orangered">
+            <img class="card-img-top" src={{data['poster_path'].iloc[0]}} alt="a Movie">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h1 style="color: #00A2D8">{{data['title'].iloc[0]}}</h1>
+        <p>{{data['overview'].iloc[0][0:250]}} <i class="font-warna"> ... readmore </i> </p>
+        <p><b>Duration: </b> {{data['runtime'].iloc[0]|round|int}} minutes</p>
+        <p><b>Country: </b> {{data['name_country'].iloc[0] | replace("[", "") | replace("]", "") | replace("'", "")}}</p>
+        <p><b>Genre: </b> {{data['genre_new'].iloc[0]  | replace("[", "") | replace("]", "") | replace("'", "")}}</p>
+        <p><b>Director: </b> {{data['director_name'].iloc[0] | replace("[", "") | replace("]", "") | replace("'", "")}}</p>
+        <div class="star-rating">
+                <span class="fa fa-star-o" data-rating="1"></span>
+                <span class="fa fa-star-o" data-rating="2"></span>
+                <span class="fa fa-star-o" data-rating="3"></span>
+                <span class="fa fa-star-o" data-rating="4"></span>
+                <span class="fa fa-star-o" data-rating="5"></span>
+                <span class="fa fa-star-o" data-rating="6"></span>
+                <span class="fa fa-star-o" data-rating="7"></span>
+                <span class="fa fa-star-o" data-rating="8"></span>
+                <span class="fa fa-star-o" data-rating="9"></span>
+                <span class="fa fa-star-o" data-rating="10"></span>
+                <input type="hidden" name="whatever1" class="rating-value" value="{{data['weighted_rating'].iloc[0]}}">
+                <span style="color: #00A2D8"><b>{{data['weighted_rating'].iloc[0]|round(2, 'floor')}}</b></span>
+            </div>
+    </div>
+
+</div>
+
+<div class="ml-5 mr-5 mb-1  mt-5 scrolling-wrapper">
+    <h3 class="f-warna mb-3">Another Similar For You</h3>
+    
+    <!-- recom BY GENRE -->
+    {% for i in range(0, 3) %}
+    <div class="card mr-2" style="width: 8rem; display: inline-block;">
+
+        <a href="/individual_poster?id={{genre_rec['id'].iloc[i]}}">
+            <img class="card-img-top" src={{genre_rec['poster_path'].iloc[i]}} alt="a Movie">
+        </a>
+
+    </div>
+    {% endfor %}
+
+    <!-- recom BY Keywords -->
+    {% for i in range(0, 4) %}
+    <div class="card mr-2" style="width: 8rem; display: inline-block;">
+
+        <a href="/individual_poster?id={{key_rec['id'].iloc[i]}}">
+            <img class="card-img-top" src={{key_rec['poster_path'].iloc[i]}} alt="a Movie">
+        </a>
+    </div>
+    {% endfor %}
+
+    <!-- recom BY Cast + Dirictor -->
+    {% for i in range(0, 4) %}
+    <div class="card mr-2" style="width: 8rem; display: inline-block;">
+
+        <a href="/individual_poster?id={{cast_dir_rec['id'].iloc[i]}}">
+            <img class="card-img-top" src={{cast_dir_rec['poster_path'].iloc[i]}} alt="a Movie">
+        </a>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock body1 %}

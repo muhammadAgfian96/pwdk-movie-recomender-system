@@ -1,0 +1,149 @@
+/* to update this, hard refresh Ctrl+f5 */
+/* https://stackoverflow.com/questions/41144565/flask-does-not-see-change-in-js-file */
+
+/* *{
+    border: 0.5px solid salmon;
+} */
+*{
+    margin: 0;
+    padding: 0;
+    /* border:0.5px solid  salmon ; */
+}
+:root {
+    --primary-biru: #00A2D8;
+    --second-biru: #57C9E9;
+}
+
+.samping{
+    display: inline;
+}
+.scrolling-wrapper {
+    /* Make this scrollable when needed */
+    overflow-x: auto;
+    /* We don't want vertical scrolling */
+    overflow-y: hidden;
+    /* Make an auto-hiding scroller for the 3 people using a IE */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    /* For WebKit implementations, provide inertia scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* We don't want internal inline elements to wrap */
+    white-space: nowrap;
+    /* Remove the default scrollbar for WebKit implementations */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+  }
+  
+.mybg-common{
+    background-color: white;
+}
+
+.bg-gradient {
+    background-image: linear-gradient(to left top, rgb(192, 235, 229), rgb(58, 188, 231));
+
+}
+
+
+
+/* this is for my button page*/
+
+.my-btn {
+    box-sizing: border-box;
+    background-color: var(--primary-biru);
+    border-radius: 15px;
+    padding: 10px 35px 10px 35px;
+    border: 3px solid var(--primary-biru);
+    transition: 250ms;
+    color: white;
+}
+
+.my-btn:hover {
+    box-sizing: border-box;
+    background-image: linear-gradient(to left top, #FFF, #FFF);
+    border-radius: 15px;
+    padding: 10px 35px 10px 35px;
+    border: 3px solid var(--primary-biru);
+    cursor: pointer;
+    transition: 250ms;
+    color: var(--primary-biru);
+}
+
+.my-btn:active {
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 10px 35px 10px 35px;
+    border: 3px solid var(--second-biru);
+    cursor: pointer;
+    transition: 250ms;
+    color: var(--primary-biru);
+}
+
+
+/* this is for my button sign up*/
+.my-btn-nav {
+    box-sizing: border-box;
+    background-color: var(--primary-biru);
+    border-radius: 10px;
+    padding: 5px 15px 5px 15px;
+    border: 3px solid var(--primary-biru);
+    transition: 250ms;
+    color: white;
+}
+
+
+.my-btn-nav:hover{
+    box-sizing: border-box;
+    text-decoration: none;
+    background-image: linear-gradient(to left top, #FFF, #FFF);
+    border-radius: 10px;
+    padding: 5px 15px 5px 15px;
+    border: 3px solid var(--primary-biru);
+    cursor: pointer;
+    transition: 250ms;
+    color: var(--primary-biru);
+}
+
+
+.font-warna{
+    box-sizing: border-box;
+    color: var(--second-biru);
+}
+
+.f-warna{
+    color: var(--primary-biru);
+}
+
+.font-warna:hover, .f-nav:hover{
+    box-sizing: border-box;
+
+    color: var(--primary-biru) !important; 
+    font-weight: bolder !important; 
+    /* transition: 250ms !important; */
+
+}
+
+.f-nav{
+    box-sizing: border-box;
+    color: #c2c2c2;
+}
+
+.absolute-center {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;
+
+}
+
+/* RATINGS */
+.star-rating {
+    line-height:32px;
+    font-size:1.25em;
+  }
+  
+  .star-rating .fa-star{color: #00A2D8;}
